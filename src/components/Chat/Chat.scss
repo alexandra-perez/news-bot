@@ -1,0 +1,40 @@
+.Chat {
+
+    h1 {
+        font-weight: 700;
+    }
+
+    textarea {
+        padding: 5px;
+        border-radius: 5px;
+        resize: none;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 1000px;
+    }
+
+    .button {
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .container {
+        margin: 40px 0px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .message {
+        background-color:#20aa6d;
+        color: #fff;
+        border: 5px;
+        padding: 20px;
+        border-radius: 30px;
+        margin: 20px 0px;
+        width: fit-content
+    }
+}
