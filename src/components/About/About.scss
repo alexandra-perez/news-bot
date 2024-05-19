@@ -1,3 +1,47 @@
+@import '../../styles/variables.scss';
+
 .About {
     padding: 30px;
+    text-align: center;
+    margin: 30px auto;
+    line-height: 1.5rem;
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h1, h3 {
+        margin-bottom: 10px;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 10em;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 3rem;
+        gap: 1rem;
+    }
+
+    .icon {
+        width: 1.5rem;
+    }
+
+    .icon:hover {
+        cursor: pointer;
+    }
+
+    .info {
+        width: 75%;
+        margin: 30px auto;
+        line-height: 2.5rem;
+    }
+
+    button {
+        margin: 20px 10px;
+    }
 }

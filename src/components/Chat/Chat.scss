@@ -1,40 +1,65 @@
+@import '../../styles/variables.scss';
+
 .Chat {
+    .welcome {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
 
     h1 {
+        color: $primaryColor;
         font-weight: 700;
-    }
-
-    textarea {
-        padding: 5px;
-        border-radius: 5px;
-        resize: none;
-        border: none;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        width: 1000px;
-    }
-
-    .button {
-        padding: 10px 15px;
-        border-radius: 5px;
-        border: none;
+        font-size: 1.3rem;
     }
 
     .container {
-        margin: 40px 0px;
         display: flex;
         align-items: center;
         gap: 20px;
-        position: fixed;
-        bottom: 0;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        padding-left: 20px;
+        border-radius: 30px;
+        resize: none;
+        border: none;
+        box-shadow: $boxShadow;
+        width: 1000px;
+        display: block;
+        margin: auto;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    img {
+        width: 30px;
+    }
+
+    .messages {
+        // border: 2px solid $backgroundColor;
+        border-radius: 5px;
+        max-height: 70vh;
+        overflow: auto;
+        margin-bottom: 2rem;
+        padding: 10px 30px;
     }
 
     .message {
-        background-color:#20aa6d;
-        color: #fff;
+        background-color: $primaryColor;
+        color: $secondaryColor;
         border: 5px;
         padding: 20px;
         border-radius: 30px;
         margin: 20px 0px;
-        width: fit-content
+        width: fit-content;
+        box-shadow: $boxShadow;
+    }
+
+    button {
+        border-radius: 50%;
+        box-shadow: $boxShadow;
     }
 }

@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.Footer {
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $textColor;
+    color: $secondaryColor;
+
+    li {
+        list-style-type: none;
+    }
+
+    li:hover, span:hover {
+        color: $primaryColor;
+    }
+}

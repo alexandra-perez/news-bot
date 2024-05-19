@@ -1,12 +1,14 @@
+@import '../src/styles/variables.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
   padding: 30px;
   scroll-behavior: smooth;
-  height: 100vh;
-  margin: 0;
 }
 
+
+// Reset
 html,
 body,
 div,
@@ -57,6 +59,7 @@ ol,
 ul,
 li,
 fieldset,
+textarea,
 form,
 label,
 legend,
@@ -103,8 +106,21 @@ a:any-link {
   color: inherit;
 }
 
+input[type='submit'],
+button {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
 
-input[type="submit"] , button  {
-  background-color: #20aa6d;
-  color: #fff;
+input[type='submit']:hover,
+button:hover{
+  background-color: $hoverColor;
+  cursor: pointer;
+}
+
+.wrapper {
+  min-height: 100vh;
 }

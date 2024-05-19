@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import Articles from '../Articles/Articles';
+import sendIcon from '../../assets/send.png';
 import './Chat.scss';
 
 export default function Chat() {
   const [query, setQuery] = useState('');
-  const [articles, setArticles] = useState([]);
-  const [messages, setMessages] = useState([]);
+  const [submission, setSubmission] = useState(false);
+  const [chatBox, setChatBox] = useState([]);
   const fetch_url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${
     import.meta.env.VITE_API_KEY
   }`;
-  const [submission, setSubmission] = useState(false);
 
   function handleChange(e) {
     setQuery(e.target.value);
@@ -20,18 +20,30 @@ export default function Chat() {
 
     const message = e.target.input.value;
     if (message.trim()) {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        `Show me articles about ${message}`,
-      ]);
+      const currMessage = `Show me articles about ${message}`;
+
+      const currChatItem = {
+        type: 'message',
+        content: currMessage,
+      };
+
+      setChatBox((prevChatBox) => [...prevChatBox, currChatItem]);
     }
 
     e.target.input.value = '';
+
     fetch(fetch_url)
       .then((response) => response.json())
       .then((JSONresponse) => {
-        console.log(JSONresponse);
-        setArticles(JSONresponse.articles);
+        const articles = JSONresponse.articles;
+        console.log(articles);
+        const currArticleItem = {
+          type: 'articles',
+          content: articles,
+          query: message,
+        };
+
+        setChatBox((prevChatBox) => [...prevChatBox, currArticleItem]);
       })
       .catch(console.error);
     setSubmission(true);
@@ -39,13 +51,26 @@ export default function Chat() {
 
   return (
     <div className="Chat">
+      {!submission && (
+        <div className="welcome">
+          <h1>Welcome to NewsBot</h1>
+          <p>Enter a keyword below and NewsBot will search for articles on that topic </p>
+        </div>
+      )}
       <div className="messages">
-        {messages.map((message, i) => (
-          <div key={i} className="message">
-            <p>{message}</p>
+        {chatBox.map((item, i) => (
+          <div key={i} className="item">
+            {item.type === 'message' ? (
+              <p className="message">{item.content}</p>
+            ) : (
+              submission && (
+                <div className="bot-message">
+                  <Articles query={item.query} articles={item.content} />
+                </div>
+              )
+            )}
           </div>
         ))}
-        {submission && <Articles query={query} articles={articles} />}
       </div>
       <form onSubmit={handleSubmit}>
         <div className="container">
@@ -58,7 +83,9 @@ export default function Chat() {
             ></textarea>
           </div>
           <div>
-            <input className="button" type="submit" value="Send"></input>
+            <button type="submit">
+              <img src={sendIcon} alt="" />
+            </button>
           </div>
         </div>
       </form>
