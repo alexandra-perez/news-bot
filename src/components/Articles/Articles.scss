@@ -1,17 +1,20 @@
 @import '../../styles/variables.scss';
 
 .Articles {
-    background-color: $backgroundColor;
-    color: $textColor;
-    padding: 20px;
-    border-radius: 30px;
-    box-shadow: $boxShadow;
-    max-width: 50%;
-    height: 30%;
+    .bot-message {
+        background-color: $backgroundColor;
+        color: $textColor;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: $boxShadow;
+        max-width: 50%;
+        height: 30%;
+    }
 }
 
-.Articles_list {
+.articles-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: inherit;
 }

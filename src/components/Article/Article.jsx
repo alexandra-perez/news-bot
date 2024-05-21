@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Article.scss';
 
 export default function Article({ article }) {
+  // Set article content
   const { title, source, description, url } = article;
 
   return (

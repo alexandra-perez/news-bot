@@ -39,8 +39,12 @@ export default function About() {
           back-end technologies.
         </p>
         <p>Feel free to check out my work and connect with me.</p>
-        <button>View My Projects</button>
-        <button>Contact Me</button>
+        <Link to="/projects">
+          <button>View My Projects</button>
+        </Link>
+        <Link to="/contact">
+          <button>Contact Me</button>
+        </Link>
       </div>
     </div>
   );
