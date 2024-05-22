@@ -3,7 +3,7 @@
 .Contact {
     padding: 30px;
     line-height: 2rem;
-    display:block;
+    display: block;
     margin: 0 auto;
     width: 50%;
 
@@ -29,5 +29,34 @@
     .flex-end {
         display: flex;
         justify-content: flex-end;
+    }
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.confirmation, .error {
+    padding: 30px;
+    text-align: center;
+
+    h1 {
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+}
+
+.error {
+    background-color: $backgroundColor;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 5px;
+
+    h2 {
+        font-weight: 700;
     }
 }
