@@ -7,14 +7,15 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    sendEmail(e)
-  }
-
-  function sendEmail(e) {
     emailjs
-      .sendForm('', '', form.current, {
-        publicKey: '',
-      })
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        }
+      )
       .then(
         () => {
           console.log('SUCCESS!');
@@ -22,8 +23,15 @@ export default function Contact() {
         (error) => {
           console.log('FAILED...', error.text);
         }
-      );
+    );
+    e.target.reset();
   }
+
+  console.log(
+    import.meta.env.VITE_SERVICE_ID,
+    import.meta.env.VITE_TEMPLATE_ID,
+    import.meta.env.VITE_PUBLIC_KEY
+  );
 
 
   return (
@@ -34,7 +42,7 @@ export default function Contact() {
           Name
           <input
             type="text"
-            name="name"
+            name="user_name"
             id="name"
             autoComplete="off"
             required
@@ -44,7 +52,7 @@ export default function Contact() {
           Email
           <input
             type="email"
-            name="email"
+            name="user_email"
             id="email"
             autoComplete="off"
             required
