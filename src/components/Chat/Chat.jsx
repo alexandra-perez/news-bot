@@ -8,7 +8,14 @@ export default function Chat() {
   const [submission, setSubmission] = useState(false);
   const [chatBox, setChatBox] = useState([]);
   const messagesEndRef = useRef(null);
-  const fetch_url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${import.meta.env.VITE_API_KEY}`;
+  // const fetch_url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${import.meta.env.VITE_API_KEY}`;
+  const fetch_url =
+    'https://corsproxy.io/?' +
+    encodeURIComponent(
+      `https://newsapi.org/v2/everything?q=${query}&apiKey=${
+        import.meta.env.VITE_API_KEY
+      }`
+    );
 
   function handleChange(e) {
     setQuery(e.target.value);
