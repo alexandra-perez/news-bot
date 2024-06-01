@@ -93,12 +93,12 @@ export default function Chat() {
         <form onSubmit={handleSubmit}>
           <div className="form-container">
             <div>
-              <textarea
+              <input
                 name="input"
                 id="input"
                 placeholder="Show me articles about..."
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div>
               <button type="submit">
