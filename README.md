@@ -10,7 +10,9 @@ NewsBot chat application built using Vite and React.
 - Built with the News API for fetching relevant news articles.
 
 # Demo
-Check out the demo [here](https://reactnewsbot.netlify.app/).
+**(Local Development Only)**
+
+**Note:** Due to the API limitation, the current demo ([here](https://reactnewsbot.netlify.app/)) might not display news fetching functionality when deployed on Netlify.
 
 # Credits
 - Icons: Sourced from [svgrepo.com](https://www.svgrepo.com).
