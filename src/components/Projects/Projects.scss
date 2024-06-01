@@ -11,6 +11,15 @@
 
     h2 {
         padding: 10px 0px;
+        font-weight: 700;
+    }
+
+    h3 {
+        color: $backgroundColor;
+    }
+
+    h3:hover {
+        color: $textColor;
     }
 
     .container {
@@ -23,7 +32,6 @@
     .container__item {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
         margin: 20px;
         box-shadow: $boxShadow;
