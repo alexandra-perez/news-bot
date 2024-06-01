@@ -10,7 +10,7 @@
     }
 
     h2 {
-        padding: 10px 0px;
+padding-bottom: 10px;
         font-weight: 700;
     }
 
@@ -38,6 +38,19 @@
         border: 1px solid $backgroundColor;
         border-radius: 5px;
     }
+
+    .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 50%;
+    }
+
+.img__container {
+    height: 100%;
+    overflow: hidden;
+}
 
     img {
         width: 100%;
